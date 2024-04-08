@@ -1,4 +1,3 @@
-import React from "react";
 import HomeIcon from "../icons/home-icon";
 import MovieIcon from "../icons/movie-icon";
 import TvSeriesIcon from "../icons/series-icon";
@@ -102,7 +101,7 @@ const Sidebar = () => {
                 textDecoration: "none",
               }}>
                 <img
-                  src={link.icon}
+                  src={link.icon.toString()}
                   alt={link.name}
                   style={{
                     width: "18px",
