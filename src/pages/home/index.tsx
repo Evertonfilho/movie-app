@@ -13,7 +13,6 @@ import MovieTrendList from "../../componentes/movie-list/movieTrendList";
 import { MovieDataType } from "../../assets/data";
 import { MovieContext } from "../../context/movie-context";
 
-
 const Home = () => {
   const [search, setSearch] = React.useState("");
   const [searchList, setSearchList] = React.useState<MovieDataType[]>([]);
@@ -24,10 +23,10 @@ const Home = () => {
 
   const handleSearch = (e: { target: { value: SetStateAction<string> } }) => {
     setSearch(e.target.value);
-    const newList = movies.filter((movie =>
-       movie.title.toLowerCase().includes(search.toLowerCase())
-    ));
-      setSearchList(newList)
+    const newList = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(search.toLowerCase())
+    );
+    setSearchList(newList);
   };
 
   return (
@@ -72,13 +71,13 @@ const Home = () => {
           <Box width="100%">
             <Box width="100%">
               <Typography variant="h5" component="h1" my={6} fontWeight={400}>
-                Trending
+                Tendências
               </Typography>
               <MovieTrendList trendingList={trendingList} />
             </Box>
             <Box width="100%">
               <Typography variant="h5" component="h1" my={6} fontWeight={400}>
-                Recommend For You
+                Recomendados
               </Typography>
               <MovieList recommendList={recommendList} />
             </Box>
@@ -86,7 +85,7 @@ const Home = () => {
         ) : (
           <Box width="100%">
             <Typography variant="h5" component="h1" my={6} fontWeight={400}>
-              Found
+              Found {searchList.length} results for "{search}"{""}
             </Typography>
           </Box>
         )}

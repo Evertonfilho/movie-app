@@ -13,6 +13,13 @@ interface MovieAction {
   type: string;
   id: string;
 }
+
+const MovieList: MovieDataType[] = moviesData;
+
+const initalMovieState: MovieState = {
+  movies: MovieList,
+};
+
 const MovieReducer = (state: MovieState, action: MovieAction): MovieState => {
   switch (action.type) {
     case "TOOGLE BOOKMARK":
@@ -30,21 +37,16 @@ const MovieReducer = (state: MovieState, action: MovieAction): MovieState => {
   }
 };
 
-const MovieList: MovieDataType[] = moviesData;
-
-const initialMovieState: MovieState = {
-  movies: MovieList,
-};
 export const MovieContext = createContext<{
   state: MovieState;
   dispatch: React.Dispatch<MovieAction>;
 }>({
-  state: initialMovieState,
+  state: initalMovieState,
   dispatch: () => {},
 });
 
 export const MovieProvider = ({ children }: MovieContextProps) => {
-  const [state, dispatch] = useReducer(MovieReducer, initialMovieState);
+  const [state, dispatch] = useReducer(MovieReducer, initalMovieState);
   return (
     <MovieContext.Provider value={{ state, dispatch }}>
       {children}

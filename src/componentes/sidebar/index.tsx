@@ -1,28 +1,28 @@
-import HomeIcon from "../icons/home-icon";
-import MovieIcon from "../icons/movie-icon";
-import TvSeriesIcon from "../icons/series-icon";
-import BookmarkIcon from "../icons/bookmark-icon";
+import HomeIcon from "../../assets/icons/icon-nav-home.svg";
+import MovieIcon from "../../assets/icons/icon-nav-movies.svg";
+import TvSeriesIcon from "../../assets/icons/icon-nav-tv-series.svg";
+import BookmarkIcon from "../../assets/icons/icon-nav-bookmark.svg";
 import { Link, useLocation } from "react-router-dom";
 import { Box, Hidden, Typography } from "@mui/material";
 
 const navLinks = [
   {
-    name: "Home",
+    name: "Página Inicial",
     icon: HomeIcon,
     link: "/",
   },
   {
-    name: "Movies",
+    name: "Filmes",
     icon: MovieIcon,
     link: "/movies",
   },
   {
-    name: "Tv Series",
+    name: "Tv e Series",
     icon: TvSeriesIcon,
     link: "/tv-series",
   },
   {
-    name: "Bookmarks",
+    name: "Favoritos",
     icon: BookmarkIcon,
     link: "/bookmarks",
   },

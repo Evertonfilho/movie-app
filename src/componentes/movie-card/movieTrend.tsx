@@ -27,7 +27,6 @@ const MovieTrendCard = ({ movie }: MovieTrendCardProps) => {
         style={{
           padding: 0,
           position: "relative",
-          overflowX: "scroll",
           display: "flex",
         }}
       >
